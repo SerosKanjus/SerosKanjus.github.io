@@ -1,33 +1,23 @@
-@import url('https://fonts.googleapis.com/css2?family=Cardo:ital,wght@0,400;0,700;1,400&display=swap');
-* {
-  box-sizing: border-box;
-}
 body {
   display: block;
   justify-content: center;
   padding: 10px;
   background: #efefef00;
-  font-family: 'Cardo', serif;
+  font-family: "Cardo", serif;
   color: #000000;
 }
-@media (min-width: 600px) {
-  body {
-    padding: 60px 10px;
-  }
-}
 h1 {
-  font-family: 'Cardo', serif;
+  font-family: "Cardo", serif;
   font-size: 64px;
   text-align: center;
-  
 }
 h2 {
-  font-family: 'Cardo', serif;
+  font-family: "Cardo", serif;
   font-size: 36px;
 }
 h3 {
   margin: 0;
-  font-family: 'Cardo', serif;
+  font-family: "Cardo", serif;
   font-size: 26px;
   font-style: italic;
   font-weight: 100;
@@ -50,70 +40,96 @@ a {
   color: black;
 }
 
-.title {
- 
-  position: static;
+button:focus,
+input:focus,
+textarea:focus,
+select:focus {
+  outline: none;
 }
 
 .tabs {
-  max-width: fit-content;
-  margin-left: auto;
-  margin-right: auto;
-  position:relative;
-  margin-top: 90px;
-  display: flex;
-  flex-wrap: wrap;
-  max-width: 700px;
-  background: #ff000000;
-  /* box-shadow: 0 48px 80px -32px rgba(0,0,0,0.3); */
-}
-.input {
-  position: absolute;
-  opacity: 0;
-}
-.label {
-  max-width: fit-content;
-  margin-left: auto;
-  margin-right: auto;
-  width: 100%;
-  padding: 20px 30px;
-  background: #e5e5e500;
-  cursor: pointer;
-  font-weight: bold;
-  font-size: 18px;
-  color: #7f7f7f;
-  transition: background 0.4s, color 0.4s;
-}
-.label:hover {
-  background: #d8d8d8;
-  color:#000;
-}
-.label:active {
-  background: #ccc;
-  text-decoration: underline;
-}
-.input:focus + .label {
-  z-index: 1;
-}
-.input:checked + .label {
-  background: #fff;
-  color: #000;
-}
-@media (min-width: 600px) {
-  .label {
-    width: auto;
-  }
-}
-.panel {
-  display: none;
-  padding: 20px 30px 30px;
-  background: #fff;
-}
-@media (min-width: 600px) {
-  .panel {
-    order: 99;
-  }
-}
-.input:checked + .label + .panel {
+  max-width: 650px;
+  padding: 30px;
   display: block;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+  -moz-flex-wrap: wrap;
+  flex-wrap: wrap;
+  margin-left: auto;
+  margin-right: auto;
+  overflow: hidden;
+}
+.tabs [class^="tab"] label,
+.tabs [class*=" tab"] label {
+  color: #7f7f7f;
+  cursor: pointer;
+  display: block;
+  font-size: 18px;
+  font-weight: bold;
+  line-height: 1em;
+  padding: 2rem 0;
+  text-align: center;
+}
+.tabs [class^="tab"] [type="radio"],
+.tabs [class*=" tab"] [type="radio"] {
+  border-bottom: 1px solid rgba(0, 0, 0, 0);
+  cursor: pointer;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  display: block;
+  width: 100%;
+  -webkit-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+.tabs [class^="tab"] [type="radio"]:hover,
+.tabs [class^="tab"] [type="radio"]:focus,
+.tabs [class*=" tab"] [type="radio"]:hover,
+.tabs [class*=" tab"] [type="radio"]:focus {
+  border-bottom: 1px solid #000000;
+}
+.tabs [class^="tab"] [type="radio"]:checked,
+.tabs [class*=" tab"] [type="radio"]:checked {
+  border-bottom: 2px solid #000000;
+}
+.tabs [class^="tab"] [type="radio"]:checked + div,
+.tabs [class*=" tab"] [type="radio"]:checked + div {
+  opacity: 1;
+}
+.tabs [class^="tab"] [type="radio"] + div,
+.tabs [class*=" tab"] [type="radio"] + div {
+  display: block;
+  opacity: 0;
+  padding: 2rem 0;
+  width: 90%;
+  -webkit-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+.tabs .tab-2 {
+  width: 50%;
+}
+.tabs .tab-2 [type="radio"] + div {
+  width: 200%;
+  margin-left: 200%;
+}
+.tabs .tab-2 [type="radio"]:checked + div {
+  margin-left: 0;
+}
+.tabs .tab-2:last-child [type="radio"] + div {
+  margin-left: 100%;
+}
+.tabs .tab-2:last-child [type="radio"]:checked + div {
+  margin-left: -100%;
+}
+
+@media (min-width: 600px) {
+  .tabs {
+    padding: 60px;
+  }
 }
