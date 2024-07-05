@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Cardo:ital,wght@0,400;0,700;1,400&display=swap');
+
 body {
   display: block;
   justify-content: center;
@@ -37,7 +38,7 @@ ul {
   line-height: 1.5;
 }
 a {
-  text-decoration: none;
+  text-decoration: underline;
   color: black;
 }
 
