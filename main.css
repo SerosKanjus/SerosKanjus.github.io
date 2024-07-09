@@ -41,6 +41,9 @@ a {
   text-decoration: underline;
   color: black;
 }
+li + li {
+  margin-top: 8px;
+}
 
 button:focus,
 input:focus,
